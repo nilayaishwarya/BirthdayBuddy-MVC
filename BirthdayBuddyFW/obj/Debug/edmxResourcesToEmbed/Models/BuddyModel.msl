@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BirthDayBuddyModelStoreContainer" CdmEntityContainer="BirthDayBuddyDbContext">
+    <EntitySetMapping Name="BuddyInfoes">
+      <EntityTypeMapping TypeName="BirthDayBuddyModel.BuddyInfo">
+        <MappingFragment StoreEntitySet="BuddyInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+          <ScalarProperty Name="BUDDYNAME" ColumnName="BUDDYNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="allvalues" FunctionName="BirthDayBuddyModel.Store.allvalues">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BirthDayBuddyModel.allvalues_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+          <ScalarProperty Name="BUDDYNAME" ColumnName="BUDDYNAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

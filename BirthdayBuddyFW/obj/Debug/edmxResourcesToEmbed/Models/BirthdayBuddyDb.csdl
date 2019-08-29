@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BirthDayBuddyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BuddyInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="NAME" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BIRTHDAY" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BUDDYNAME" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityContainer Name="BirthDayBuddyDb1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BuddyInfoes" EntityType="Self.BuddyInfo" />
+    <FunctionImport Name="allvalues" ReturnType="Collection(BirthDayBuddyModel.allvalues_Result)" />
+  </EntityContainer>
+  <ComplexType Name="allvalues_Result">
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="255" />
+    <Property Type="DateTime" Name="BIRTHDAY" Nullable="false" />
+    <Property Type="String" Name="BUDDYNAME" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+</Schema>

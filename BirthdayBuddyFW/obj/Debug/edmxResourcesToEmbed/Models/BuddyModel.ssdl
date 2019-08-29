@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BirthDayBuddyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BirthDayBuddy.dbo.BuddyInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BuddyInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="BIRTHDAY" />
+      <PropertyRef Name="BUDDYNAME" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="char" MaxLength="255" Nullable="false" />
+    <Property Name="BIRTHDAY" Type="date" Nullable="false" />
+    <Property Name="BUDDYNAME" Type="char" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <Function Name="allvalues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="BirthDayBuddyModelStoreContainer">
+    <EntitySet Name="BuddyInfo" EntityType="Self.BuddyInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BuddyInfo].[ID] AS [ID], 
+    [BuddyInfo].[NAME] AS [NAME], 
+    [BuddyInfo].[BIRTHDAY] AS [BIRTHDAY], 
+    [BuddyInfo].[BUDDYNAME] AS [BUDDYNAME]
+    FROM [dbo].[BuddyInfo] AS [BuddyInfo]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
